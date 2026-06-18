@@ -1,0 +1,8 @@
+import numpy as np
+
+def zscore_standardize(X, axis=0, eps=1e-12):
+    X=np.array(X,dtype=float)
+    mean=np.mean(X,axis=axis,keepdims=True)
+    std=np.std(X,axis=axis,keepdims=True)
+    z_score=(X-mean)/(std+eps)
+    return z_score
